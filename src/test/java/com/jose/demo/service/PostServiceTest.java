@@ -41,9 +41,9 @@ public class PostServiceTest {
 	public void dto_save_to_post() {
 		//given
 		PostsSaveRequestDto dto = PostsSaveRequestDto.builder()
-				.author("yoonwon.kang@gmail.com")
-				.content("테스")
-				.title("타이")
+				.author("test1@gmail.com")
+				.content("테스트1의 본문")
+				.title("테스트1")
 				.build();
 		
 		

@@ -1,0 +1,22 @@
+laguage: java
+jdk:
+	- openjdk8
+
+branches:
+	only:
+		-master
+
+# Travis CI 서버 HOME
+cache:
+	directories:
+		- '$HOME/.m2/repository'
+		- '$HOME/.gradle'
+
+script: "./gradlew clean build"
+
+notifications:
+	email:
+		recipients:
+			- yoonwon.kang@gmail.com
+
+

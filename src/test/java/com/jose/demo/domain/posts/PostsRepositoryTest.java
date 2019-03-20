@@ -34,41 +34,41 @@ public class PostsRepositoryTest {
 		postsRepository.deleteAll();
 	}
 	
-	@Test
-	public void load_post() {
-		//given
-        postsRepository.save(Posts.builder()
-                .title("테스트 게시글")
-                .content("테스트 본문")
-                .author("yoonwon.kang@gmail.com")
-                .build());
-
-        //when
-        List<Posts> postsList = postsRepository.findAll();
-
-        //then
-        Posts posts = postsList.get(0);
-        assertThat(posts.getTitle(), is("테스트 게시글"));
-        assertThat(posts.getContent(), is("테스트 본문"));
-	}
-	
-	@Test
-	public void BaseTimeEntity_regist() {
-		//given
-		LocalDateTime now = LocalDateTime.now();
-		postsRepository.save(Posts.builder()
-				.title("테스트 게시글")
-				.content("본문")
-				.author("yoonwon.kang@gmail.com")
-				.build());
-		//when
-		List<Posts> postsList = postsRepository.findAll();
-		
-		//then
-		Posts posts = postsList.get(0);
-		assertTrue(posts.getCreatedDate().isAfter(now));
-		assertTrue(posts.getModifiedDate().isAfter(now));
-	}
+//	@Test
+//	public void load_post() {
+//		//given
+//        postsRepository.save(Posts.builder()
+//                .title("테스트 게시글")
+//                .content("테스트 본문")
+//                .author("yoonwon.kang@gmail.com")
+//                .build());
+//
+//        //when
+//        List<Posts> postsList = postsRepository.findAll();
+//
+//        //then
+//        Posts posts = postsList.get(0);
+//        assertThat(posts.getTitle(), is("테스트 게시글"));
+//        assertThat(posts.getContent(), is("테스트 본문"));
+//	}
+//	
+//	@Test
+//	public void BaseTimeEntity_regist() {
+//		//given
+//		LocalDateTime now = LocalDateTime.now();
+//		postsRepository.save(Posts.builder()
+//				.title("테스트 게시글")
+//				.content("본문")
+//				.author("yoonwon.kang@gmail.com")
+//				.build());
+//		//when
+//		List<Posts> postsList = postsRepository.findAll();
+//		
+//		//then
+//		Posts posts = postsList.get(0);
+//		assertTrue(posts.getCreatedDate().isAfter(now));
+//		assertTrue(posts.getModifiedDate().isAfter(now));
+//	}
 	
 ////	stream 사용방법 ->그래서내부에서 처리해주는게 맞다
 //	@Test

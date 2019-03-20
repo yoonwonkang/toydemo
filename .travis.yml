@@ -20,12 +20,18 @@ notifications:
     recipients:
       - yoonwon.kang@gmail.com 
 
+before_depoly:
+  - zip -r toydemo *
+  - mkdir -p deploy
+  - mv toydemo.zip deploy/toydemo.zip
+
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: demo-springboot-deploy
     region: ap-northeast-2
+    local_dir : deploy
     skip_cleanup: true
     acl: public_read
     wait-util-deployed: true

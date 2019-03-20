@@ -9,6 +9,8 @@ HELP.md
 *.property
 *.yaml
 *.configuration
+!application.yml
+!application-dev.yml
 !.travis.yml
 
 ### STS ###

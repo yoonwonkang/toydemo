@@ -20,7 +20,7 @@ notifications:
     recipients:
       - yoonwon.kang@gmail.com 
 
-before_depoly:
+before_deploy:
   - zip -r toydemo *
   - mkdir -p deploy
   - mv toydemo.zip deploy/toydemo.zip

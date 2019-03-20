@@ -30,5 +30,5 @@ deploy:
     acl: public_read
     wait-util-deployed: true
     on:
-      repo: yoonwonkang/toydemo
+      repo: https://github.com/yoonwonkang/toydemo
       branch: master

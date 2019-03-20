@@ -47,7 +47,7 @@ deploy:
     key: toydemo.zip
     bundle_type: zip
     application: demo-webservice
-    deployment_group: demo-deploy-group
+    deployment_group: demo-webservice-group
     wait-until-deployed: true
     on:
       repo: yoonwonkang/toydemo
